@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(opengl_project VERSION 0.1.0)
+cmake_policy(SET CMP0072 NEW)
+find_package(OpenGL REQUIRED COMPONENTS OpenGL)
+add_executable(opengl_project src/main.cpp lib/glad/glad.h lib/glad/glad.c src/Gamma.cpp src/Gamma.h)
+target_link_libraries(opengl_project glfw OpenGL::OpenGL)
