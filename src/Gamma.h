@@ -1,26 +1,36 @@
 #ifndef __GAMMA__
 #define __GAMMA__
-#include "../lib/glad/glad.h"
+#include "lib/glad/glad.h"
 #include <GLFW/glfw3.h>
+
 #include <string>
 #include <iostream>
 #include <vector>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
+
+float round_float(float value);
 namespace Gamma
 {
-
+   typedef void (*CallbackFunc)(GLFWwindow *);
    class Engine
    {
-      uint width;
-      uint height;
       std::string app_name;
+      std::vector<CallbackFunc> callbacks;
 
    public:
+      uint width;
+      uint height;
+      float aspect_ratio;
       GLFWwindow *current_window;
-      static Engine *New(std::string app_name, uint width, uint height);
+      static Engine *New(std::string app_name, float aspect_ratio, uint width);
       void clear_buffer();
       Engine *swap_buffer();
       Engine *poll_events();
+      Engine *set_callback(CallbackFunc callback_func);
+      void run_callbacks();
    };
 
    class ShaderProgram
@@ -34,6 +44,7 @@ namespace Gamma
       void set_bool(std::string name, bool value);
       void set_int(std::string name, int value);
       void set_float(std::string name, float value);
+      void set_mat4(std::string nam, glm::mat4 &value);
    };
 
    class VertexDataBuffer
@@ -43,6 +54,7 @@ namespace Gamma
 
       VertexDataBuffer();
       void bind();
+      void unbind();
       template <typename T>
       void buffer_data(std::vector<T> &vertices);
       void set_attrib_pointer(uint location, uint length, uint data_type, bool normalize, uint stride, uint64_t offset);
@@ -56,6 +68,7 @@ namespace Gamma
 
       VertexElementBuffer();
       void bind();
+      void unbind();
       template <typename T>
       void buffer_data(std::vector<T> &indexes);
    };
@@ -66,29 +79,36 @@ namespace Gamma
       uint id;
       VertexArrayObject();
       void bind();
+      void unbind();
    };
 
-   class Texture
+   class ImageData
    {
 
-      void shout()
-      {
-         float a[] = {0.0, 0.0, 0.0, 0.0};
+   public:
+      int width;
+      int height;
+      int n_channels;
+      unsigned char *data;
+      ImageData(std::string data_path);
 
-         // wrapping
-         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-
-         // sampling
-         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-         // setting a parameter
-         glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, a);
-      }
+      ~ImageData();
    };
-
    std::string load_file(std::string file_path);
+
+   class Texture2D
+   {
+   public:
+      uint id;
+
+      Texture2D();
+      void bind();
+      void unbind();
+      void set_int(int param_name, int param_value);
+      void set_source(int texture_color_format, int width, int height, int source_image_color_format, u_char *data);
+      void gen_mipmap();
+      static Texture2D FromImage(std::string path);
+   };
 
 }
 
@@ -105,5 +125,6 @@ void Gamma::VertexDataBuffer::buffer_data(std::vector<T> &vertices)
    bind();
    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(T), vertices.data(), GL_STATIC_DRAW);
 }
+
 
 #endif

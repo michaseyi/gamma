@@ -129,29 +129,29 @@ opengl_project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/build
 .PHONY : opengl_project/fast
 
-lib/glad/glad.o: lib/glad/glad.c.o
-.PHONY : lib/glad/glad.o
+src/Camera.o: src/Camera.cpp.o
+.PHONY : src/Camera.o
 
 # target to build an object file
-lib/glad/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/lib/glad/glad.c.o
-.PHONY : lib/glad/glad.c.o
+src/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
 
-lib/glad/glad.i: lib/glad/glad.c.i
-.PHONY : lib/glad/glad.i
+src/Camera.i: src/Camera.cpp.i
+.PHONY : src/Camera.i
 
 # target to preprocess a source file
-lib/glad/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/lib/glad/glad.c.i
-.PHONY : lib/glad/glad.c.i
+src/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
 
-lib/glad/glad.s: lib/glad/glad.c.s
-.PHONY : lib/glad/glad.s
+src/Camera.s: src/Camera.cpp.s
+.PHONY : src/Camera.s
 
 # target to generate assembly for a file
-lib/glad/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/lib/glad/glad.c.s
-.PHONY : lib/glad/glad.c.s
+src/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
 
 src/Gamma.o: src/Gamma.cpp.o
 .PHONY : src/Gamma.o
@@ -176,6 +176,54 @@ src/Gamma.s: src/Gamma.cpp.s
 src/Gamma.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Gamma.cpp.s
 .PHONY : src/Gamma.cpp.s
+
+src/Joystick.o: src/Joystick.cpp.o
+.PHONY : src/Joystick.o
+
+# target to build an object file
+src/Joystick.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Joystick.cpp.o
+.PHONY : src/Joystick.cpp.o
+
+src/Joystick.i: src/Joystick.cpp.i
+.PHONY : src/Joystick.i
+
+# target to preprocess a source file
+src/Joystick.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Joystick.cpp.i
+.PHONY : src/Joystick.cpp.i
+
+src/Joystick.s: src/Joystick.cpp.s
+.PHONY : src/Joystick.s
+
+# target to generate assembly for a file
+src/Joystick.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Joystick.cpp.s
+.PHONY : src/Joystick.cpp.s
+
+src/lib/glad/glad.o: src/lib/glad/glad.c.o
+.PHONY : src/lib/glad/glad.o
+
+# target to build an object file
+src/lib/glad/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/lib/glad/glad.c.o
+.PHONY : src/lib/glad/glad.c.o
+
+src/lib/glad/glad.i: src/lib/glad/glad.c.i
+.PHONY : src/lib/glad/glad.i
+
+# target to preprocess a source file
+src/lib/glad/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/lib/glad/glad.c.i
+.PHONY : src/lib/glad/glad.c.i
+
+src/lib/glad/glad.s: src/lib/glad/glad.c.s
+.PHONY : src/lib/glad/glad.s
+
+# target to generate assembly for a file
+src/lib/glad/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/lib/glad/glad.c.s
+.PHONY : src/lib/glad/glad.c.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -210,12 +258,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... opengl_project"
-	@echo "... lib/glad/glad.o"
-	@echo "... lib/glad/glad.i"
-	@echo "... lib/glad/glad.s"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
 	@echo "... src/Gamma.o"
 	@echo "... src/Gamma.i"
 	@echo "... src/Gamma.s"
+	@echo "... src/Joystick.o"
+	@echo "... src/Joystick.i"
+	@echo "... src/Joystick.s"
+	@echo "... src/lib/glad/glad.o"
+	@echo "... src/lib/glad/glad.i"
+	@echo "... src/lib/glad/glad.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

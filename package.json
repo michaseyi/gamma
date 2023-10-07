@@ -1,0 +1,15 @@
+{
+  "name": "opengl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node reload.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.8.2"
+  }
+}
