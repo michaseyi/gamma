@@ -1,10 +1,10 @@
 .vscode
 CMakeFiles
 node_modules
-./package-lock.json
-./cmake_install.cmake
-./CMakeCache.txt
-./Makefile
-./opengl_project
+package-lock.json
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+opengl_project
 src/lib
 build
