@@ -9,7 +9,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
+#include <glm/gtc/quaternion.hpp>
+#include "utils.h"
 
 float round_float(float value);
 namespace Gamma
@@ -45,6 +46,7 @@ namespace Gamma
       void set_int(std::string name, int value);
       void set_float(std::string name, float value);
       void set_mat4(std::string nam, glm::mat4 &value);
+      void set_vec3(std::string name, glm::vec3 &value);
    };
 
    class VertexDataBuffer
@@ -57,6 +59,7 @@ namespace Gamma
       void unbind();
       template <typename T>
       void buffer_data(std::vector<T> &vertices);
+      void buffer_data_from_pointer(float *source, u_int size);
       void set_attrib_pointer(uint location, uint length, uint data_type, bool normalize, uint stride, uint64_t offset);
       void enable_attrib_pointer(uint location);
    };
@@ -101,13 +104,15 @@ namespace Gamma
    public:
       uint id;
 
-      Texture2D();
+      Texture2D(int texture_unit);
       void bind();
       void unbind();
       void set_int(int param_name, int param_value);
       void set_source(int texture_color_format, int width, int height, int source_image_color_format, u_char *data);
       void gen_mipmap();
-      static Texture2D FromImage(std::string path);
+      int texture_unit;
+      static Texture2D FromImage(std::string path, int texture_unit);
+      static Texture2D FromImagePNG(std::string path, int texture_unit);
    };
 
 }
@@ -126,5 +131,6 @@ void Gamma::VertexDataBuffer::buffer_data(std::vector<T> &vertices)
    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(T), vertices.data(), GL_STATIC_DRAW);
 }
 
-
+std::ostream &operator<<(std::ostream &output, glm::vec3 &vec);
+std::ostream &operator<<(std::ostream &output, glm::mat4 &vec);
 #endif

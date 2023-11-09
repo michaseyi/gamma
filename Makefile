@@ -177,6 +177,30 @@ src/Gamma.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Gamma.cpp.s
 .PHONY : src/Gamma.cpp.s
 
+src/Geometry.o: src/Geometry.cpp.o
+.PHONY : src/Geometry.o
+
+# target to build an object file
+src/Geometry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Geometry.cpp.o
+.PHONY : src/Geometry.cpp.o
+
+src/Geometry.i: src/Geometry.cpp.i
+.PHONY : src/Geometry.i
+
+# target to preprocess a source file
+src/Geometry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Geometry.cpp.i
+.PHONY : src/Geometry.cpp.i
+
+src/Geometry.s: src/Geometry.cpp.s
+.PHONY : src/Geometry.s
+
+# target to generate assembly for a file
+src/Geometry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Geometry.cpp.s
+.PHONY : src/Geometry.cpp.s
+
 src/Joystick.o: src/Joystick.cpp.o
 .PHONY : src/Joystick.o
 
@@ -200,6 +224,30 @@ src/Joystick.s: src/Joystick.cpp.s
 src/Joystick.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Joystick.cpp.s
 .PHONY : src/Joystick.cpp.s
+
+src/Spline.o: src/Spline.cpp.o
+.PHONY : src/Spline.o
+
+# target to build an object file
+src/Spline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Spline.cpp.o
+.PHONY : src/Spline.cpp.o
+
+src/Spline.i: src/Spline.cpp.i
+.PHONY : src/Spline.i
+
+# target to preprocess a source file
+src/Spline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Spline.cpp.i
+.PHONY : src/Spline.cpp.i
+
+src/Spline.s: src/Spline.cpp.s
+.PHONY : src/Spline.s
+
+# target to generate assembly for a file
+src/Spline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/Spline.cpp.s
+.PHONY : src/Spline.cpp.s
 
 src/lib/glad/glad.o: src/lib/glad/glad.c.o
 .PHONY : src/lib/glad/glad.o
@@ -225,29 +273,53 @@ src/lib/glad/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/lib/glad/glad.c.s
 .PHONY : src/lib/glad/glad.c.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/main2.o: src/main2.cpp.o
+.PHONY : src/main2.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/main2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/main2.cpp.o
+.PHONY : src/main2.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/main2.i: src/main2.cpp.i
+.PHONY : src/main2.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/main2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/main2.cpp.i
+.PHONY : src/main2.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/main2.s: src/main2.cpp.s
+.PHONY : src/main2.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/main2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/main2.cpp.s
+.PHONY : src/main2.cpp.s
+
+src/utils.o: src/utils.cpp.o
+.PHONY : src/utils.o
+
+# target to build an object file
+src/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/utils.cpp.o
+.PHONY : src/utils.cpp.o
+
+src/utils.i: src/utils.cpp.i
+.PHONY : src/utils.i
+
+# target to preprocess a source file
+src/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
+
+src/utils.s: src/utils.cpp.s
+.PHONY : src/utils.s
+
+# target to generate assembly for a file
+src/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_project.dir/build.make CMakeFiles/opengl_project.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
 
 # Help Target
 help:
@@ -264,15 +336,24 @@ help:
 	@echo "... src/Gamma.o"
 	@echo "... src/Gamma.i"
 	@echo "... src/Gamma.s"
+	@echo "... src/Geometry.o"
+	@echo "... src/Geometry.i"
+	@echo "... src/Geometry.s"
 	@echo "... src/Joystick.o"
 	@echo "... src/Joystick.i"
 	@echo "... src/Joystick.s"
+	@echo "... src/Spline.o"
+	@echo "... src/Spline.i"
+	@echo "... src/Spline.s"
 	@echo "... src/lib/glad/glad.o"
 	@echo "... src/lib/glad/glad.i"
 	@echo "... src/lib/glad/glad.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/main2.o"
+	@echo "... src/main2.i"
+	@echo "... src/main2.s"
+	@echo "... src/utils.o"
+	@echo "... src/utils.i"
+	@echo "... src/utils.s"
 .PHONY : help
 
 

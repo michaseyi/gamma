@@ -7,4 +7,5 @@ CMakeCache.txt
 Makefile
 opengl_project
 src/lib
+models
 build
