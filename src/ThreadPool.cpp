@@ -36,24 +36,3 @@ ThreadPool::~ThreadPool()
       worker.join();
    }
 }
-
-float foo(float a)
-{
-   return a;
-}
-int bar(int b)
-{
-   return b;
-}
-
-int main()
-{
-   ThreadPool threadPool{5};
-   for (int i = 0; i < 100; i++)
-   {
-      threadPool.AddTask([i]
-                         { std::cout << i << "nice" << std::endl; });
-   }
-
-   return 0;
-}
